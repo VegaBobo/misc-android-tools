@@ -296,6 +296,8 @@ Similar ao procedimento de fazer root com o Magisk, é só abrir o Research Down
 
 --
 
+### Atualizar para o Android 14 manualmente?
+
 Tem uma galera me perguntando como que atualiza o realme Note 50 para o Android 14, e sendo sincero pra vocês, a maneira correta de atualizar esse aparelho é esperando a atualização chegar mesmo, você pode ir lá no aplicativo de configurações e buscar por atualizações manualmente.
 
 Se seu aparelho não encontra atualizações, ou você quiser fazer a atualização manual, eu NÃO RECOMENDO, não sei como funciona as atualizações da realme, não sei se atualizar manualmente pode afetar atualizações futuras, e nem sei se atualizar manualmente pode causar algum problema, então EU NÃO RECOMENDO!!
