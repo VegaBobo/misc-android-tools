@@ -293,3 +293,66 @@ Também fiz isso várias vezes kk, principalmente testando GSI, nesses casos, in
 Como escrever uma partição pelo Research Download?
 
 Similar ao procedimento de fazer root com o Magisk, é só abrir o Research Download, carregar o ".pac" do seu smartphone, ir em "Settings", e em "Main Page", desmarque tudo, marque apenas o "FDL1" e "FDL2" que são necessários para o funcionamento do protocolo, depois, marque a partição que você quer escrever, e na coluna "FileName" referente a partição marcada, dê dois clicks, e selecione os "..." para selecionar um arquivo, selecione o arquivo que você quer flashar na partição desejada, toque em "OK" e ja era, "Start downloading", plugue o smartphone no computador no modo download, que o arquivo será flashado na partição informada, utilizei isso bastante para restaurar partições feitas pelo backup.
+
+--
+
+Tem uma galera me perguntando como que atualiza o realme Note 50 para o Android 14, e sendo sincero pra vocês, a maneira correta de atualizar esse aparelho é esperando a atualização chegar mesmo, você pode ir lá no aplicativo de configurações e buscar por atualizações manualmente.
+
+Se seu aparelho não encontra atualizações, ou você quiser fazer a atualização manual, eu NÃO RECOMENDO, não sei como funciona as atualizações da realme, não sei se atualizar manualmente pode afetar atualizações futuras, e nem sei se atualizar manualmente pode causar algum problema, então EU NÃO RECOMENDO!!
+
+Mas se mesmo assim, você quiser tentar fazer a atualização manualmente, nessa postagem, irei mostrar como fazer isso, MAS FAÇA POR SUA CONTA E RISCO!!
+
+De qualquer maneira, se você quiser atualizar o seu realme Note 50 manualmente para o Android 14, você pode procurar atualizações manualmente utilizando uma ferramenta alternativa, como o realme-ota ( https://github.com/R0rt1z2/realme-ota ).
+
+Essa ferramenta alternativa "realme-ota" requer o Python para funcionar, então será necessário instalar o Termux no Android para utiliza-la.
+
+- Instale o Termux no seu aparelho:
+    https://f-droid.org/pt_BR/packages/com.termux/
+
+- No termux, vamos atualizar os repositorios do ambiente do Termux, com o comando:
+    pkg update
+
+- Depois instale o python e o git com o comando:
+    pkg install python3 git
+
+- Python instalado, vamos instalar o realme-ota com o comando:
+    pip3 install --upgrade git+https://github.com/R0rt1z2/realme-ota
+
+Para utilizar a ferramenta e verificar atualizações é bem simples:
+    realme-ota <modelo> <versão OTA atual> <versão da realme ui> <identificador da operadora>
+
+Para descobrir o modelo, você pode utilizar o comando:
+    getprop ro.product.name
+
+Para descobrir a versão OTA atual:
+    getprop ro.build.version.ota
+
+Para descobrir a versão da realmeUI:
+    getprop ro.build.version.realmeui
+* Caso o comando para descobrir a versão da realmeui não mostrar nada, considere que a versão é 1
+
+Para descobrir o identificador de operadora:
+    getprop ro.build.oplus_nv_id
+* Caso o comando para descobrir o identificador de operadora não mostrar nada, considere que o código é 0
+
+Exemplo procurando atualizações manualmente com o realme Note 50 (versão EEA):
+    realme-ota RMX3834EEA RMX3834GDPR_14.C.10_3100_202407181638 1 0
+
+Exemplo procurando atualizações manualmente com o realme Note 50 (versão export):
+    realme-ota RMX3834 RMX3834export_14.C.10_3100_202407181638 1 0
+
+Esse comando deverá retornar um monte de textos, o que importa pra gente, é que dentro dos textos, vai ter um link logo ao lado do texto "down_url", esse link, é o link do arquivo OTA para atualizar o software, copie e cole esse link no navegador, e baixe a atualização de software para o armazenamento interno.
+
+Com a OTA salva no armazenamento, para atualizar manualmente, faça o seguinte:
+
+1. Desligue a internet (desligue o wifi e os dados moveis).
+
+2. Limpe os dados do aplicativo de "Atualização de software".
+
+3. Abra a tela de verificar atualizações, vai falar que você está sem internet, normal, toque na engrenagem que aparece na parte de cima, e selecione "Selecionar pacote de instalação".
+
+4. Procure pelo arquivo OTA baixado anteriormente.
+
+5. Aguarde a atualização finalizar.
+
+Procedimento testado num realme Note 50 EEA.
