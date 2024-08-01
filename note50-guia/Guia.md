@@ -306,39 +306,50 @@ De qualquer maneira, se você quiser atualizar o seu realme Note 50 manualmente 
 
 Essa ferramenta alternativa "realme-ota" requer o Python para funcionar, então será necessário instalar o Termux no Android para utiliza-la.
 
-- Instale o Termux no seu aparelho:
+Instale o Termux no seu aparelho:
+
     https://f-droid.org/pt_BR/packages/com.termux/
 
-- No termux, vamos atualizar os repositorios do ambiente do Termux, com o comando:
+No termux, vamos atualizar os repositorios do ambiente do Termux, com o comando
+
     pkg update
 
-- Depois instale o python e o git com o comando:
+Depois instale o python e o git com o comando:
+
     pkg install python3 git
 
-- Python instalado, vamos instalar o realme-ota com o comando:
+Python instalado, vamos instalar o realme-ota com o comando:
+
     pip3 install --upgrade git+https://github.com/R0rt1z2/realme-ota
 
 Para utilizar a ferramenta e verificar atualizações é bem simples:
+
     realme-ota <modelo> <versão OTA atual> <versão da realme ui> <identificador da operadora>
 
 Para descobrir o modelo, você pode utilizar o comando:
+
     getprop ro.product.name
 
 Para descobrir a versão OTA atual:
+
     getprop ro.build.version.ota
 
 Para descobrir a versão da realmeUI:
+
     getprop ro.build.version.realmeui
 * Caso o comando para descobrir a versão da realmeui não mostrar nada, considere que a versão é 1
 
 Para descobrir o identificador de operadora:
+
     getprop ro.build.oplus_nv_id
 * Caso o comando para descobrir o identificador de operadora não mostrar nada, considere que o código é 0
 
 Exemplo procurando atualizações manualmente com o realme Note 50 (versão EEA):
+
     realme-ota RMX3834EEA RMX3834GDPR_14.C.10_3100_202407181638 1 0
 
 Exemplo procurando atualizações manualmente com o realme Note 50 (versão export):
+
     realme-ota RMX3834 RMX3834export_14.C.10_3100_202407181638 1 0
 
 Esse comando deverá retornar um monte de textos, o que importa pra gente, é que dentro dos textos, vai ter um link logo ao lado do texto "down_url", esse link, é o link do arquivo OTA para atualizar o software, copie e cole esse link no navegador, e baixe a atualização de software para o armazenamento interno.
